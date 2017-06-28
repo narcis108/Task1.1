@@ -1,0 +1,11 @@
+Pasul 1 : Am cautat si am descarcat ultimul kernel de Linux.L-am gasit la adresa : https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/ si am descarcat ultima versiune (linux-4.12-rc7.tar.gz).
+
+Pasul 2 : Am dezarhivat continutul intr-un folder prin comanda: tar xzvf linux-4.12-rc7.tar.gz  
+
+Pasul 3 : Am instalat pachetele necesare dupa ce am consultat README : sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc
+
+Pasul 4 : Am copiat fisierul de configuratie local in folderul dezarhivat : cp /boot/config-$(uname -r) .config si am modificat valoarea CONFIG_LOCALVERSION="y" dupa care am rulat make menuconfig.
+
+Pasul 5 : Am apelat sudo make ; make install_modules ; make install
+
+Pasul 6 : Am apelat comenzile: update-initramfs -c -k 4.12.rc7 si update-grub dupa care am dat un reboot iar in lista de optiuni GRUB mi-a aparut versiunea nou instalata.
